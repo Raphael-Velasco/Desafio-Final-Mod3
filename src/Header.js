@@ -23,16 +23,15 @@ const Menu = styled.ul`
   justify-content: center;
   align-items: center;
   @media (max-width: 720px) {
-    margin:0px;
-    display: ${props => props.showMobile ? 'flex' : 'none'};
+    margin: 0px;
+    display: ${(props) => (props.showMobile ? "flex" : "none")};
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color:black;
+    background-color: black;
     position: absolute;
     right: 0;
     top: 25px;
-    
   }
 `;
 const MenuText = styled.li`
@@ -45,8 +44,6 @@ const MenuText = styled.li`
     transition: color 0.8s;
     color: #d2232a;
   }
-
-
 `;
 const Burger = styled.img`
   display: none;
@@ -54,28 +51,25 @@ const Burger = styled.img`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right:10px;
-    
+    margin-right: 10px;
   }
 `;
 
 export default function HeaderApp() {
-  const [showMenuMobile, setShowMenuMobile] = useState(false)
+  const [showMenuMobile, setShowMenuMobile] = useState(false);
   const toggleMenu = () => {
     setShowMenuMobile(!showMenuMobile);
   };
   return (
     <Header>
-      <a>
-        <Link to="/">
-          <Logo
-            src="https://t4.ftcdn.net/jpg/04/66/23/57/360_F_466235707_1u4EiKwQRenMZFkAxXYdyWvrzRniAqGo.jpg"
-            alt=""
-          />
-        </Link>
-      </a>
+      <Link to="/">
+        <Logo
+          src="https://t4.ftcdn.net/jpg/04/66/23/57/360_F_466235707_1u4EiKwQRenMZFkAxXYdyWvrzRniAqGo.jpg"
+          alt=""
+        />
+      </Link>
       <Menu showMobile={showMenuMobile}>
-      <Burger src={img2} onClick={toggleMenu} />
+        <Burger src={img2} onClick={toggleMenu} />
         <Link to="/">
           <MenuText>Home</MenuText>
         </Link>
