@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import img1 from "./RouterPages/img/menu.png";
 import img2 from "./RouterPages/img/close.png";
 
@@ -91,12 +91,6 @@ export default function HeaderApp() {
       </Menu>
       {/* Botão menu mobile */}
       <Burger src={img1} onClick={toggleMenu} />
-        <Router>
-          <Router>
-        <Route></Route>
-        </Router>
-        </Router>
     </Header>
-
   );
 }
