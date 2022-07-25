@@ -92,5 +92,6 @@ export default function HeaderApp() {
       {/* Botão menu mobile */}
       <Burger src={img1} onClick={toggleMenu} />
     </Header>
+
   );
 }
