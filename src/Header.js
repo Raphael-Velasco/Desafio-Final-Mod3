@@ -91,6 +91,11 @@ export default function HeaderApp() {
       </Menu>
       {/* Botão menu mobile */}
       <Burger src={img1} onClick={toggleMenu} />
+        <Router>
+          <Router>
+        <Route></Route>
+        </Router>
+        </Router>
     </Header>
   );
 }
