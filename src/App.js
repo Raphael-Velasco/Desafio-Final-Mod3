@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react'
+import Header from './Header'
+import Main from './Main'
+import AboutMe from './RouterPages/AboutMe'
+import Onu from './RouterPages/Onu'
+import Projects from './RouterPages/Projects'
+import { BrowserRouter as Router,Routes, Route,} from "react-router-dom";
+import { createGlobalStyle } from "styled-components";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const GlobalStyle = createGlobalStyle`
+  *{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    list-style:none;
+    font-family: 'Oswald', sans-serif;
+  }
+`;
+
+export default class  BlogApp  extends Component{
+    render(){
+        return(
+            <>
+                <GlobalStyle/>
+                <Router>
+                  <Header/>
+                  <Routes>
+                    <Route path="/AboutMe" element={<AboutMe/>} />
+                    <Route path="/" element={<Main/>}/>
+                    <Route path="/Onu" element={<Onu/>} />
+                    <Route path="Projects" element={<Projects/>}/>
+                  </Routes>
+                </Router>
+                
+            </>
+        )
+    }
 }
-
-export default App;
